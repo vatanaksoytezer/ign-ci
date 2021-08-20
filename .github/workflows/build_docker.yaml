@@ -33,7 +33,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          file: .docker/${{ github.job }}/Dockerfile
+          file: Dockerfile
           build-args: ROS_DISTRO=${{ matrix.env.ROS_DISTRO }}
           pull: true
           push: true
