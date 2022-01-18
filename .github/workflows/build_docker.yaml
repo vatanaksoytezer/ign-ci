@@ -18,7 +18,7 @@ jobs:
       packages: write
       contents: read
     env:
-      IMAGE: ghcr.io/${{ github.repository_owner }}/ignition-edifice:${{ matrix.env.ROS_DISTRO }}-${{ matrix.env.DOCKER_NAME }}
+      IMAGE: ghcr.io/${{ github.repository_owner }}/ci-helper:${{ matrix.env.ROS_DISTRO }}
 
     steps:
       - name: Set up Docker Buildx
