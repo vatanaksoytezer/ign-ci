@@ -12,6 +12,7 @@ RUN apt-get -q update && \
     mkdir -p ~/ws_ros/src && \
     cd ~/ws_ros/src && \
     git clone https://github.com/vatanaksoytezer/ign-ci.git -b main && \
+    apt-get install -y python3-pip && \
     rosdep update && \
     DEBIAN_FRONTEND=noninteractive \
     rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false  && \
