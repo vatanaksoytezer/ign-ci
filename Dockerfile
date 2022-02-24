@@ -5,7 +5,7 @@ FROM ghcr.io/ros-planning/moveit2:${ROS_DISTRO}-release
 MAINTAINER Vatan Aksoy Tezer vatan@picknik.ai
 
 # Commands are combined in single RUN statement with "apt/lists" folder removal to reduce image size
-RUN echo "deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -cs) robotpkg" | sudo tee /etc/apt/ sources.list.d/robotpkg.list && \
+RUN echo "deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -cs) robotpkg" | sudo tee /etc/apt/sources.list.d/robotpkg.list && \
     curl http://robotpkg.openrobots.org/packages/debian/robotpkg.key | sudo apt-key add - && \
     apt-get -q update && \
     apt-get -q -y dist-upgrade && \
