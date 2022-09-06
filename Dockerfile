@@ -18,6 +18,6 @@ RUN echo "deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub $(
     apt-get install -y python3-pip && \
     rosdep update && \
     DEBIAN_FRONTEND=noninteractive \
-    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false  && \
+    IGNITION_VERSION=fortress rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false  && \
     rm -rf ~/ws_ros && \
     rm -rf /var/lib/apt/lists/*
