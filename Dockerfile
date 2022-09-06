@@ -12,6 +12,7 @@ RUN echo "deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub $(
     apt-get install -y robotpkg-pinocchio && \
     git config --global user.email "you@example.com" && \
     git config --global user.name "Your Name" && \
+    git config --global --add safe.directory "*" && \
     mkdir -p ~/ws_ros/src && \
     cd ~/ws_ros/src && \
     git clone https://github.com/vatanaksoytezer/ign-ci.git -b main && \
